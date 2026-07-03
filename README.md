@@ -5,3 +5,6 @@ Personal site. Reality checks for early stage founders: idea, business model, pr
 Book a session: https://cal.com/dantepuglisi/reality-check
 
 Hosted on GitHub Pages.
+
+
+Site: https://dantepuglisi.com
