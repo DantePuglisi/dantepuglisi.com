@@ -3,42 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dante Puglisi · Startup Reality Checks</title>
-<meta name="description" content="The honest outside read on your startup before investors get theirs. What's strong, where to focus, and concrete tips from a working CTO.">
-<meta property="og:title" content="Dante Puglisi · Startup Reality Checks">
-<meta property="og:description" content="The honest outside read on your startup before investors get theirs.">
+<title>Dante Puglisi · The Outside Read</title>
+<meta name="description" content="Pitch me exactly like you'd pitch an investor. You get the honest outside read: what's strong, where to focus, what to fix, from a working CTO.">
+<meta property="og:title" content="Dante Puglisi · The Outside Read">
+<meta property="og:description" content="Pitch me exactly like you'd pitch an investor. You get the honest read back: what's strong, where to focus, what to fix.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dantepuglisi.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #191714; --muted: #6f6a62; --bg: #faf8f4; --card: #ffffff;
-    --accent: #b4432f; --accent-dark: #93351f; --line: #e7e2d8; --wash: #f1ede4;
+    --accent: #b4432f; --line: #e7e2d8; --wash: #f1ede4; --dark: #211e19;
     color-scheme: light;
   }
   * { margin: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Fraunces', Georgia, serif; background: var(--bg); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-  .sans { font-family: 'Inter', -apple-system, sans-serif; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-  .wide { max-width: 960px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
   nav { position: sticky; top: 0; background: rgba(250,248,244,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 50; }
-  .nav-inner { max-width: 960px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-inner { max-width: 1000px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
   .brand { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; text-decoration: none; color: var(--ink); }
   .nav-links { display: flex; gap: 22px; align-items: center; }
   .nav-links a { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); text-decoration: none; }
   .nav-links a:hover { color: var(--ink); }
   .nav-cta { background: var(--ink); color: #fff !important; padding: 8px 18px; border-radius: 999px; font-weight: 500; }
   .nav-cta:hover { background: var(--accent); }
+  @media (max-width: 640px) { .nav-links a:not(.nav-cta) { display: none; } }
 
-  header { padding: 100px 0 72px; }
+  header { padding: 96px 0 80px; position: relative; overflow: hidden; }
+  header:before { content: ""; position: absolute; top: -180px; right: -180px; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(180,67,47,.09), transparent 65%); pointer-events: none; }
   .kicker { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; font-weight: 600; }
-  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.08; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 24px; }
+  h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.06; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 24px; }
   h1 em { font-style: italic; color: var(--accent); }
-  .lede { font-size: 20px; color: var(--muted); max-width: 600px; }
+  .lede { font-size: 20px; color: var(--muted); max-width: 620px; }
   .cta { display: inline-block; margin-top: 36px; padding: 16px 32px; background: var(--ink); color: #fff; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500; border-radius: 10px; transition: background .15s, transform .15s; }
   .cta:hover { background: var(--accent); transform: translateY(-1px); }
   .cta.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); margin-left: 10px; }
@@ -46,66 +46,82 @@
   .cta-note { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--muted); margin-top: 12px; }
   .cta-note b { color: var(--accent); font-weight: 600; }
 
-  section { padding: 72px 0; border-top: 1px solid var(--line); }
-  h2 { font-size: clamp(24px, 3.6vw, 32px); font-weight: 600; margin-bottom: 20px; letter-spacing: -0.01em; }
+  section { padding: 80px 0; }
+  section.alt { background: var(--wash); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  h2 { font-size: clamp(26px, 3.8vw, 34px); font-weight: 600; margin-bottom: 18px; letter-spacing: -0.01em; }
   .section-kicker { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; font-weight: 600; }
   p + p { margin-top: 15px; }
   .muted { color: var(--muted); }
 
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
-  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
-  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px; }
-  .tile h3 { font-size: 18px; margin-bottom: 8px; font-weight: 600; }
-  .tile p { font-size: 15px; color: var(--muted); }
-  .tile .num { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; margin-bottom: 10px; display: block; }
-
-  .punch { background: var(--ink); color: #efece6; border-radius: 18px; padding: 36px; margin-top: 28px; font-family: 'Inter', sans-serif; }
+  /* Punch list document */
+  .punch { background: var(--dark); color: #efece6; border-radius: 18px; padding: 40px; margin-top: 32px; font-family: 'Inter', sans-serif; box-shadow: 0 24px 60px rgba(25,23,20,.18); position: relative; }
+  .punch:after { content: "SAMPLE"; position: absolute; top: 22px; right: 24px; font-size: 10px; letter-spacing: .2em; color: #8b867c; border: 1px solid #454138; padding: 4px 10px; border-radius: 999px; }
   .punch .doc-title { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #b8b2a6; margin-bottom: 4px; }
   .punch .doc-sub { font-size: 13px; color: #8b867c; margin-bottom: 26px; }
-  .punch h4 { font-family: 'Fraunces', serif; font-size: 17px; margin: 22px 0 10px; color: #fff; }
-  .punch h4.strong { color: #8fd1a1; } .punch h4.focus { color: #f0b35f; } .punch h4.tips { color: #9dc3f0; }
+  .punch h4 { font-family: 'Fraunces', serif; font-size: 17px; margin: 24px 0 10px; display: flex; align-items: center; gap: 10px; }
+  .punch h4 .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .punch h4.strong { color: #8fd1a1; } .punch h4.strong .dot { background: #8fd1a1; }
+  .punch h4.focus { color: #f0b35f; } .punch h4.focus .dot { background: #f0b35f; }
+  .punch h4.tips { color: #9dc3f0; } .punch h4.tips .dot { background: #9dc3f0; }
   .punch ul { list-style: none; padding: 0; }
-  .punch li { font-size: 14.5px; line-height: 1.6; padding: 8px 0 8px 26px; position: relative; color: #d8d3c9; border-bottom: 1px solid rgba(255,255,255,.06); }
+  .punch li { font-size: 14.5px; line-height: 1.6; padding: 9px 0 9px 26px; position: relative; color: #d8d3c9; border-bottom: 1px solid rgba(255,255,255,.06); }
+  .punch li:last-child { border-bottom: none; }
   .punch li:before { content: "→"; position: absolute; left: 0; color: #6f6a62; }
   .punch .redact { background: #3a372f; color: transparent; border-radius: 3px; padding: 0 4px; user-select: none; }
 
-  .timeline { margin-top: 28px; display: grid; gap: 0; }
-  .step { display: grid; grid-template-columns: 56px 1fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); }
-  .step:last-child { border-bottom: none; }
-  .step .badge { width: 44px; height: 44px; border-radius: 50%; background: var(--wash); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; color: var(--accent); }
-  .step h3 { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
-  .step p { font-size: 15px; color: var(--muted); }
-  .step .when { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--accent); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  /* Visual timeline */
+  .timeline { margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+  .timeline:before { content: ""; position: absolute; top: 34px; left: 12%; right: 12%; height: 2px; background: var(--line); }
+  .step { text-align: center; padding: 0 14px; position: relative; }
+  .step .badge { width: 68px; height: 68px; border-radius: 50%; background: var(--card); border: 2px solid var(--line); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; position: relative; z-index: 1; transition: border-color .2s; }
+  .step:hover .badge { border-color: var(--accent); }
+  .step .badge svg { width: 28px; height: 28px; stroke: var(--accent); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .step .when { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .step h3 { font-size: 17px; font-weight: 600; margin-bottom: 6px; line-height: 1.3; }
+  .step p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+  @media (max-width: 760px) {
+    .timeline { grid-template-columns: 1fr; gap: 28px; }
+    .timeline:before { display: none; }
+    .step { display: grid; grid-template-columns: 68px 1fr; gap: 16px; text-align: left; padding: 0; }
+    .step .badge { margin: 0; }
+  }
 
+  /* What you get tiles */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px; position: relative; }
+  .tile .big-num { font-family: 'Fraunces', serif; font-size: 54px; font-weight: 700; color: var(--wash); position: absolute; top: 8px; right: 18px; line-height: 1; -webkit-text-stroke: 1px var(--line); }
+  .tile h3 { font-size: 18px; margin-bottom: 8px; font-weight: 600; position: relative; }
+  .tile p { font-size: 15px; color: var(--muted); position: relative; }
+
+  /* About */
   .about { display: grid; grid-template-columns: 150px 1fr; gap: 32px; align-items: start; margin-top: 28px; }
   @media (max-width: 640px) { .about { grid-template-columns: 1fr; } }
   .about img { width: 150px; height: 150px; border-radius: 14px; object-fit: cover; border: 1px solid var(--line); }
-  .about .fallback { width: 150px; height: 150px; border-radius: 14px; background: var(--wash); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 44px; font-weight: 600; color: var(--accent); }
+  .about .fallback { width: 150px; height: 150px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 44px; font-weight: 600; color: var(--accent); }
   .about p { font-size: 16px; }
   .about a { color: var(--accent); }
   .cred { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-  .cred span { font-family: 'Inter', sans-serif; font-size: 12.5px; background: var(--wash); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; color: var(--muted); }
+  .cred span { font-family: 'Inter', sans-serif; font-size: 12.5px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; color: var(--muted); }
 
-  .offers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
-  @media (max-width: 760px) { .offers { grid-template-columns: 1fr; } }
-  .offer { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px; display: flex; flex-direction: column; }
-  .offer.hero-offer { border-color: var(--accent); box-shadow: 0 8px 28px rgba(180,67,47,.08); }
-  .offer h3 { font-size: 18px; font-weight: 600; }
-  .offer .price { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 600; margin: 10px 0 2px; }
-  .offer .per { font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--muted); margin-bottom: 14px; }
-  .offer p { font-size: 14.5px; color: var(--muted); flex: 1; }
-  .offer .book { margin-top: 18px; text-align: center; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; text-decoration: none; padding: 11px; border-radius: 8px; background: var(--ink); color: #fff; }
-  .offer .book:hover { background: var(--accent); }
-  .offer .book.alt { background: var(--wash); color: var(--ink); border: 1px solid var(--line); }
+  /* Single offer + booking */
+  .offer-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 36px; margin-top: 32px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; box-shadow: 0 12px 36px rgba(25,23,20,.06); }
+  @media (max-width: 640px) { .offer-card { grid-template-columns: 1fr; } }
+  .offer-card h3 { font-size: 22px; font-weight: 600; margin-bottom: 6px; }
+  .offer-card .meta { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); }
+  .offer-card .meta b { color: var(--ink); }
+  .offer-card .price { font-family: 'Inter', sans-serif; font-size: 40px; font-weight: 600; text-align: right; }
+  .offer-card .price small { display: block; font-size: 12.5px; color: var(--muted); font-weight: 400; margin-top: 2px; }
 
   details { border-bottom: 1px solid var(--line); }
   details summary { cursor: pointer; padding: 18px 0; font-size: 17px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  details summary::-webkit-details-marker { display: none; }
   details summary:after { content: "+"; font-family: 'Inter', sans-serif; color: var(--accent); font-size: 20px; }
   details[open] summary:after { content: "–"; }
   details div { padding: 0 0 18px; color: var(--muted); font-size: 15.5px; }
 
   #book { scroll-margin-top: 80px; }
-  #cal-inline { height: 640px; margin-top: 28px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--card); }
+  #cal-inline { min-height: 1000px; margin-top: 28px; }
 
   footer { padding: 48px 0 72px; border-top: 1px solid var(--line); font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); }
   footer a { color: var(--ink); }
@@ -117,7 +133,7 @@
   <div class="nav-inner">
     <a class="brand" href="#">Dante Puglisi</a>
     <div class="nav-links">
-      <a href="#punchlist">The deliverable</a>
+      <a href="#punchlist">The punch list</a>
       <a href="#how">How it works</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
@@ -129,129 +145,104 @@
 <div class="wrap">
 
   <header>
-    <div class="kicker">Dante Puglisi · Reality Checks for Founders</div>
-    <h1>The honest outside read on your startup, <em>before investors get theirs.</em></h1>
-    <p class="lede">Friends are too polite. Co-founders are too invested. And every investor you pitch is a door that only opens once. So founders book 90 minutes, 1:1, with me. What's genuinely strong, where to focus, and concrete tips on business model, product, and tech, from a working CTO.</p>
-    <a class="cta" href="#book">Book a reality check</a>
-    <a class="cta ghost" href="#punchlist">See what you get</a>
+    <div class="kicker">Dante Puglisi · The Outside Read</div>
+    <h1>Pitch me like you'd pitch an investor. <em>I'll tell you what they won't.</em></h1>
+    <p class="lede">Friends are too polite. Co-founders are too invested. And investors never tell you why they passed. So founders book 90 minutes, 1:1, with me: you pitch exactly as you normally would, and you get the honest read back. What's genuinely strong, where to focus, and concrete tips on business model, product, and tech, from a working CTO.</p>
+    <a class="cta" href="#book">Book your session</a>
+    <a class="cta ghost" href="#punchlist">See the punch list</a>
     <div class="cta-note"><b>Usually available within a day or two.</b> 90 minutes, $299, punch list within 24 hours.</div>
   </header>
 
-  <section>
-    <div class="section-kicker">Why this exists</div>
-    <h2>Nobody around you can give you the complete read.</h2>
-    <p>AI has made building a startup easier than ever, which means more people are building faster on ideas nobody has pressure-tested. Some of those ideas have real problems the founder can't see from inside. Others are much stronger than the founder realizes, and get undersold in every meeting.</p>
-    <p>Both problems have the same cause. The people close to you soften the message, and the people who decide your future don't explain their decisions. When they pass, you rarely learn why, and you don't get to pitch them again with the better version.</p>
-    <p>When you pay for the session, the politeness tax disappears. You get the full picture straight, and you get it early enough to matter.</p>
-    <p>And early is the point. The best time for this conversation is before you've launched anywhere and before any investor has seen your name. Drafting a YC application, building your first product in public, or still deciding if the idea deserves a year of your life? That's exactly when to book.</p>
-
-    <div class="grid2">
-      <div class="tile"><span class="num">01</span><h3>What's genuinely strong</h3><p>Most founders undersell their best material. We find it and put more spotlight on it.</p></div>
-      <div class="tile"><span class="num">02</span><h3>Where to focus</h3><p>The business model holes and idea risks that will come up, ranked by what to fix first.</p></div>
-      <div class="tile"><span class="num">03</span><h3>Product and tech, from a CTO's chair</h3><p>What to build, what to buy, and where AI actually fits your story. I build AI myself, so expect at least one "you could use XYZ for that" you haven't heard before.</p></div>
-      <div class="tile"><span class="num">04</span><h3>A written punch list</h3><p>Everything above in writing, within 24 hours of the call.</p></div>
-    </div>
-  </section>
-
-  <section id="punchlist">
-    <div class="section-kicker">The deliverable</div>
-    <h2>This is what lands in your inbox within 24 hours.</h2>
-    <p class="muted">A sample punch list showing exactly the format and depth you get. Yours will look like this, about your startup.</p>
+  <section id="punchlist" style="padding-top: 40px;">
+    <div class="section-kicker">What you walk away with</div>
+    <h2>Within 24 hours, this lands in your inbox.</h2>
+    <p class="muted">Every session ends with a written punch list. This sample shows the format and the depth. Yours will be about your startup.</p>
 
     <div class="punch">
-      <div class="doc-title">Punch list · sample · B2B SaaS, pre-seed</div>
-      <div class="doc-sub">What a delivered punch list looks like</div>
+      <div class="doc-title">Punch list · B2B SaaS, pre-seed</div>
+      <div class="doc-sub">Delivered 19 hours after the session</div>
 
-      <h4 class="strong">Genuinely strong, lead with these</h4>
+      <h4 class="strong"><span class="dot"></span>Genuinely strong, lead with these</h4>
       <ul>
         <li>Your retention curve for the first 40 users is the best slide in the deck and it's currently slide 14. Move it to slide 3.</li>
         <li>Founder-market fit is real here. You lived this problem for 6 years at <span class="redact">██████</span>. Say that in the first minute, not in the team slide.</li>
-        <li>The pricing experiment you ran in March is stronger evidence than the TAM slide. Investors see invented TAMs daily. They rarely see real willingness-to-pay data.</li>
+        <li>The pricing experiment you ran in March is stronger evidence than the market size slide. Investors see invented market sizes daily. They rarely see real willingness to pay.</li>
       </ul>
 
-      <h4 class="focus">Where to focus before you pitch</h4>
+      <h4 class="focus"><span class="dot"></span>Where to focus before you pitch</h4>
       <ul>
         <li>Your acquisition story assumes a channel that dies at scale. You need an answer for what happens after the first 200 customers from <span class="redact">████████</span>.</li>
-        <li>The "AI-powered" framing is working against you. Three competitors say the same words. Your actual differentiator is the workflow position, not the model.</li>
-        <li>Unit economics slide mixes one-time and recurring revenue. Any partner will catch it in 30 seconds. Separate them before anyone sees this.</li>
+        <li>The "AI-powered" framing is working against you. Three competitors say the same words. Your actual edge is the workflow position, not the model.</li>
+        <li>The numbers slide mixes one-time and recurring revenue. Any investor will catch it in 30 seconds. Separate them before anyone sees this.</li>
       </ul>
 
-      <h4 class="tips">Concrete tips</h4>
+      <h4 class="tips"><span class="dot"></span>Concrete tips</h4>
       <ul>
-        <li>Build vs buy: stop building your own <span class="redact">██████████</span> pipeline. Two vendors do it better and your defensibility isn't there anyway.</li>
+        <li>Stop building your own <span class="redact">██████████</span> pipeline. Two vendors do it better, and it's not what makes you hard to copy.</li>
         <li>Rehearse the "why hasn't <span class="redact">██████</span> built this" answer out loud. Your current version takes 90 seconds. It needs to take 15.</li>
       </ul>
     </div>
   </section>
 
+  <section class="alt">
+    <div class="wrap" style="padding: 0;">
+      <div class="section-kicker">Why I do this</div>
+      <h2>Nobody around you will tell you the whole truth. I will.</h2>
+      <p>This started with a favor. A friend asked me to look at his friend's pitch, and it had real problems the founder couldn't see from inside. Because of the social ties, I had to soften every sentence, and the message landed slower than it should have. What that founder needed was someone with permission to be direct.</p>
+      <p>The people close to you soften the message, and the people who decide your future never explain their decisions. So most founders walk into their most important meetings having never heard the complete read: not just what's wrong, but what's strong and getting undersold, and what to do about both.</p>
+      <p>When you pay for the session, the politeness tax disappears. You get the full picture straight, and you get it early enough to matter. The best time is before you've launched anywhere and before any investor has seen your name. Drafting a YC application, building your first product in public, or still deciding if the idea deserves a year of your life? That's exactly when to book.</p>
+
+      <div class="grid2">
+        <div class="tile"><span class="big-num">1</span><h3>What's genuinely strong</h3><p>Most founders undersell their best material. We find it and put more spotlight on it.</p></div>
+        <div class="tile"><span class="big-num">2</span><h3>Where to focus</h3><p>The business model holes and idea risks that will come up, ranked by what to fix first.</p></div>
+        <div class="tile"><span class="big-num">3</span><h3>Product and tech, from a CTO's chair</h3><p>What to build, what to buy, and where AI actually fits your story. I build AI myself, so expect at least one "you could use XYZ for that" you haven't heard before.</p></div>
+        <div class="tile"><span class="big-num">4</span><h3>The written punch list</h3><p>Everything above in writing, within 24 hours, like the sample you just saw.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section id="how">
     <div class="section-kicker">How it works</div>
-    <h2>Book today, better pitch this week.</h2>
+    <h2>Book today. Pitch better this week.</h2>
     <div class="timeline">
       <div class="step">
-        <div class="badge">1</div>
-        <div><span class="when">Today</span><h3>Book and send materials</h3><p>Pick a slot and pay to confirm it. You get a confirmation with a private upload link for your deck, memo, or a Loom walkthrough. No deck yet? Even better, come early.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg></div>
+        <div><span class="when">Today</span><h3>Book a slot</h3><p>Pick a time, payment confirms it. Usually available within a day or two.</p></div>
       </div>
       <div class="step">
-        <div class="badge">2</div>
-        <div><span class="when">Before the call</span><h3>I do the homework</h3><p>I go through everything you sent the way an investor would, plus the way a CTO would. You're not paying for my first impressions on a Zoom call.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg></div>
+        <div><span class="when">The session</span><h3>Pitch me for real</h3><p>No warm up, no coaching first. You give me exactly the pitch you'd give an investor.</p></div>
       </div>
       <div class="step">
-        <div class="badge">3</div>
-        <div><span class="when">The session · 90 min</span><h3>The complete read</h3><p>What's strong, where to focus, and the questions you'll face. We rehearse the hard answers live until they're short and convincing.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-4-6.9"/><polyline points="9 11 12 14 22 4"/></svg></div>
+        <div><span class="when">Same call</span><h3>The read, live</h3><p>What's strong, where to focus, and the hard questions you'll face. We rehearse the answers until they're short and convincing.</p></div>
       </div>
       <div class="step">
-        <div class="badge">4</div>
-        <div><span class="when">Within 24 hours</span><h3>Your punch list</h3><p>Everything in writing, ranked by priority, like the sample above. Yours to keep, share with your co-founder, and work through.</p></div>
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></div>
+        <div><span class="when">Within 24h</span><h3>Your punch list</h3><p>Everything in writing, ranked by priority. Yours to keep and work through.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <div class="section-kicker">Who you're talking to</div>
-    <h2>A working CTO, not a career coach.</h2>
-    <div class="about">
-      <img src="photo.jpg" alt="Dante Puglisi" onerror="this.outerHTML='<div class=fallback>DP</div>'">
-      <div>
-        <p>I'm Dante Puglisi, CTO at YRW Tech, with one successful exit behind me. I've shipped more than 10 products of my own and helped teams ship over 100, for companies like Ledger, inCitu, and Sherpany.</p>
-        <p>When you book, you get me, not an analyst or a framework. I've been on both sides of the table you're about to sit at. I've made the build vs buy calls, watched good ideas die from bad framing, and seen weak ideas dressed up beautifully. The pattern recognition is the product.</p>
-        <p>Everything is public and verifiable on <a href="https://www.linkedin.com/in/dantepuglisi" target="_blank" rel="noopener">my LinkedIn</a>. If we talk, you'll know exactly who's giving you the read.</p>
-        <div class="cred">
-          <span>CTO · YRW Tech</span>
-          <span>1 successful exit</span>
-          <span>10+ products shipped</span>
-          <span>Ledger</span>
-          <span>inCitu</span>
-          <span>Sherpany</span>
+  <section class="alt" id="about">
+    <div class="wrap" style="padding: 0;">
+      <div class="section-kicker">Who you're pitching</div>
+      <h2>A working CTO, not a career coach.</h2>
+      <div class="about">
+        <img src="photo.jpg" alt="Dante Puglisi" onerror="this.outerHTML='<div class=fallback>DP</div>'">
+        <div>
+          <p>I'm Dante Puglisi, CTO at YRW Tech, with 1 exit behind me. I've shipped more than 10 products of my own and helped teams ship over 100, for companies like Ledger, inCitu, and Sherpany.</p>
+          <p>When you book, you get me, not an analyst or a framework. I've been on both sides of the table you're about to sit at. I've made the build vs buy calls, watched good ideas die from bad framing, and seen weak ideas dressed up beautifully. The pattern recognition is the product.</p>
+          <p>Everything is public and verifiable on <a href="https://www.linkedin.com/in/dantepuglisi" target="_blank" rel="noopener">my LinkedIn</a>. If we talk, you'll know exactly who's giving you the read.</p>
+          <div class="cred">
+            <span>CTO · YRW Tech</span>
+            <span>1 exit</span>
+            <span>10+ products shipped</span>
+            <span>Ledger</span>
+            <span>inCitu</span>
+            <span>Sherpany</span>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-kicker">Ways to work together</div>
-    <h2>Pick your format.</h2>
-    <div class="offers">
-      <div class="offer hero-offer">
-        <h3>Reality-Check Session</h3>
-        <div class="price">$299</div>
-        <div class="per">90 min live · punch list in 24h</div>
-        <p>The complete read on your idea, business model, and pitch, live. Booked and paid up front. Slots are limited around my CTO role, but you can usually get in within a day or two.</p>
-        <a class="book" href="#book">Book a session</a>
-      </div>
-      <div class="offer">
-        <h3>Async Teardown</h3>
-        <div class="price">$249</div>
-        <div class="per">no meeting · 48h turnaround</div>
-        <p>Send your deck and a Loom if you have one. You get back a written slide by slide and business model audit. For founders who want the read without the call.</p>
-        <a class="book alt" href="mailto:me@dantepuglisi.com?subject=Async%20Teardown">Request by email</a>
-      </div>
-      <div class="offer">
-        <h3>CTO Advisory</h3>
-        <div class="price">$500</div>
-        <div class="per">per month · limited slots</div>
-        <p>Two calls a month plus async questions. Tech approach, build vs buy, AI stack sanity checks. A CTO in your corner without the equity conversation.</p>
-        <a class="book alt" href="mailto:me@dantepuglisi.com?subject=CTO%20Advisory">Ask about a slot</a>
       </div>
     </div>
   </section>
@@ -265,31 +256,35 @@
     </details>
     <details>
       <summary>Is my idea safe with you?</summary>
-      <div>Yes. Everything you share stays between us, and I'm happy to sign your NDA before the call. I'm a full time CTO with my own products. I'm not in the business of ideas, I'm in the business of judgment.</div>
+      <div>Yes. Everything you share stays between us, and I'm happy to sign your NDA before the call.</div>
     </details>
     <details>
       <summary>What if I don't have a deck yet?</summary>
-      <div>Even better. The earlier we talk, the cheaper the fixes. A session at the idea stage regularly saves founders months of building the wrong thing. Bring a memo, a Loom, or just your head.</div>
+      <div>That works too. We spend the time on the idea and the business model instead of the slides. Plenty of founders book before anything is built, and the session is just as useful. Bring whatever you have, even if it's only what's in your head.</div>
     </details>
     <details>
       <summary>Will you tell me my idea is bad?</summary>
       <div>If parts of it are, yes, clearly and with reasons. But every session covers what's strong with the same rigor, and founders are usually surprised by how much is. You leave knowing where you stand, which beats leaving flattered.</div>
     </details>
     <details>
-      <summary>Can you introduce me to investors?</summary>
-      <div>No, and be careful with anyone who sells that. What I offer is the read that makes your existing chances count. Your intros are yours. My job is making sure you don't spend them on the weak version of your pitch.</div>
-    </details>
-    <details>
       <summary>Who is this not for?</summary>
-      <div>Founders looking for validation rather than a read, agencies pitching client work, and anyone post Series A with a full advisory bench already. You'd be paying for something you have.</div>
+      <div>Founders looking for validation rather than a read, agencies pitching client work, and anyone post Series A with a full advisory bench already.</div>
     </details>
   </section>
 
-  <section id="book">
-    <div class="section-kicker">Book</div>
-    <h2>Grab a slot. Usually available within a day or two.</h2>
-    <p class="muted">90 minutes, $299, secured with payment at booking. Punch list within 24 hours of the call.</p>
-    <div id="cal-inline"></div>
+  <section class="alt" id="book">
+    <div class="wrap" style="padding: 0;">
+      <div class="section-kicker">Book</div>
+      <h2>Grab a slot. Usually available within a day or two.</h2>
+      <div class="offer-card">
+        <div>
+          <h3>The Outside Read</h3>
+          <div class="meta"><b>90 minutes, 1:1, on Google Meet.</b> You pitch, I give you the complete read, and the written punch list lands within 24 hours. Payment confirms your slot.</div>
+        </div>
+        <div class="price">$299<small>one session, everything included</small></div>
+      </div>
+      <div id="cal-inline"></div>
+    </div>
   </section>
 
   <footer>
@@ -301,7 +296,7 @@
 <script>
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
   Cal("init", { origin: "https://cal.com" });
-  Cal("inline", { elementOrSelector: "#cal-inline", calLink: "dantepuglisi/reality-check", layout: "month_view" });
+  Cal("inline", { elementOrSelector: "#cal-inline", calLink: "dantepuglisi/reality-check", layout: "month_view", config: { theme: "light" } });
   Cal("ui", { styles: { branding: { brandColor: "#b4432f" } }, hideEventTypeDetails: false });
 </script>
 
