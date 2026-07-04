@@ -3,108 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dante Puglisi · Pitch me before you pitch investors</title>
-<meta name="description" content="90 minutes of a CTO's full attention, on your startup. You pitch, I give you honest feedback, you ask me anything.">
-<meta property="og:title" content="Dante Puglisi · Pitch me before you pitch investors">
-<meta property="og:description" content="90 minutes of a CTO's full attention, on your startup. See it the way investors and C-levels do, today.">
+<title>Dante Puglisi</title>
+<meta name="description" content="How do investors and C-levels see your startup when you pitch? Pitch one today and find out. 90 minutes, 1:1, honest feedback.">
+<meta property="og:title" content="Dante Puglisi">
+<meta property="og:description" content="How do investors and C-levels see your startup when you pitch? Pitch one today and find out.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dantepuglisi.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #191714; --muted: #6f6a62; --bg: #faf8f4; --card: #ffffff;
-    --accent: #b4432f; --line: #e7e2d8; --wash: #f1ede4; --dark: #211e19;
-    color-scheme: light;
+    --ink: #191714; --muted: #6f6a62; --bg: #faf8f4;
+    --accent: #b4432f; --line: #e7e2d8;
   }
   * { margin: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Newsreader', Georgia, serif; background: var(--bg); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 620px; margin: 0 auto; padding: 0 24px; }
 
-  nav { position: sticky; top: 0; background: rgba(250,248,244,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 50; }
-  .nav-inner { max-width: 1000px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
-  .brand { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; text-decoration: none; color: var(--ink); }
-  .nav-links { display: flex; gap: 22px; align-items: center; }
-  .nav-links a { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); text-decoration: none; }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-cta { background: var(--ink); color: #fff !important; padding: 8px 18px; border-radius: 999px; font-weight: 500; }
-  .nav-cta:hover { background: var(--accent); }
-  @media (max-width: 640px) { .nav-links a:not(.nav-cta) { display: none; } }
+  nav { padding: 28px 0; }
+  .nav-inner { max-width: 620px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: baseline; }
+  .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; text-decoration: none; color: var(--ink); }
+  .nav-book { font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
+  .nav-book:hover { color: var(--accent); }
 
-  header { padding: 110px 0 96px; }
-  .kicker { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 26px; font-weight: 600; }
-  h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.08; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 26px; }
-  h1 em { font-style: italic; color: var(--accent); }
-  .lede { font-size: 20px; color: var(--muted); max-width: 640px; }
-  .cta { display: inline-block; margin-top: 36px; padding: 16px 32px; background: var(--ink); color: #fff; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500; border-radius: 10px; transition: background .15s, transform .15s; }
-  .cta:hover { background: var(--accent); transform: translateY(-1px); }
-  .cta-note { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--muted); margin-top: 12px; }
-  .cta-note b { color: var(--accent); font-weight: 600; }
+  header { padding: 96px 0 72px; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 5.4vw, 44px); line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  h1 .accent { color: var(--accent); display: block; margin-top: 14px; }
+  .lede { margin-top: 26px; font-size: 17px; color: var(--muted); }
+  .lede b { color: var(--ink); font-weight: 600; }
+  .cta { display: inline-block; margin-top: 34px; padding: 14px 26px; background: var(--ink); color: #fff; text-decoration: none; font-size: 15px; font-weight: 500; border-radius: 8px; }
+  .cta:hover { background: var(--accent); }
+  .cta-note { font-size: 13px; color: var(--muted); margin-top: 12px; }
 
-  /* Editorial prose sections */
-  .big { padding: 100px 0; }
-  .big p { font-size: 18px; line-height: 1.75; max-width: 660px; }
-  .big p + p { margin-top: 20px; }
-  .big .hl { font-style: italic; box-shadow: inset 0 -0.3em 0 rgba(180,67,47,.22); }
-
-  .statement { background: var(--dark); color: #efece6; padding: 120px 0; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding-left: calc(50vw - 50% - 24px); padding-right: calc(50vw - 50% - 24px); }
-  .statement > .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
-  .statement p { font-family: 'Newsreader', Georgia, serif; font-size: clamp(24px, 3.6vw, 38px); line-height: 1.5; font-weight: 400; color: #d8d3c9; }
-  .statement .hl { font-style: italic; color: #efece6; box-shadow: inset 0 -0.35em 0 rgba(180,67,47,.55); }
-  .statement .cta { margin-top: 44px; background: #efece6; color: var(--ink); }
-  .statement .cta:hover { background: var(--accent); color: #fff; }
-
-  /* About */
-  section.alt { background: var(--wash); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding: 90px calc(50vw - 50% - 24px); }
-  section.alt > .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
-  h2 { font-size: clamp(26px, 3.8vw, 34px); font-weight: 600; margin-bottom: 18px; letter-spacing: -0.01em; }
-  .section-kicker { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; font-weight: 600; }
-  p + p { margin-top: 15px; }
+  section { padding: 64px 0; }
+  .label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+  h2 { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 16px; }
+  p + p { margin-top: 14px; }
   .muted { color: var(--muted); }
-  .about { display: grid; grid-template-columns: 150px 1fr; gap: 32px; align-items: start; margin-top: 28px; }
-  @media (max-width: 640px) { .about { grid-template-columns: 1fr; } }
-  .about img { width: 150px; height: 150px; border-radius: 14px; object-fit: cover; border: 1px solid var(--line); }
-  .about .fallback { width: 150px; height: 150px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 44px; font-weight: 600; color: var(--accent); }
-  .about p { font-size: 16px; }
-  .about a { color: var(--accent); }
-  .cred { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-  .cred span { font-family: 'Inter', sans-serif; font-size: 12.5px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; color: var(--muted); }
+  .hl { box-shadow: inset 0 -0.32em 0 rgba(180,67,47,.18); }
 
-  /* FAQ */
-  section.faq { padding: 100px 0; }
+  .statement { padding: 88px 0; }
+  .statement p { font-family: 'Space Grotesk', sans-serif; font-size: clamp(20px, 3vw, 27px); line-height: 1.5; font-weight: 500; letter-spacing: -0.01em; }
+  .statement .hl { box-shadow: inset 0 -0.3em 0 rgba(180,67,47,.28); }
+  .statement .cta { margin-top: 30px; }
+
+  .about { display: flex; gap: 22px; align-items: flex-start; }
+  .about img { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .about .fallback { width: 92px; height: 92px; border-radius: 50%; background: var(--line); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: var(--accent); flex-shrink: 0; }
+  .about a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  .facts { margin-top: 14px; font-size: 13.5px; color: var(--muted); }
+
   details { border-bottom: 1px solid var(--line); }
-  details summary { cursor: pointer; padding: 18px 0; font-size: 17px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  details:first-of-type { border-top: 1px solid var(--line); }
+  details summary { cursor: pointer; padding: 16px 0; font-size: 15.5px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
   details summary::-webkit-details-marker { display: none; }
-  details summary:after { content: "+"; font-family: 'Inter', sans-serif; color: var(--accent); font-size: 20px; }
+  details summary:after { content: "+"; color: var(--accent); font-size: 18px; flex-shrink: 0; }
   details[open] summary:after { content: "–"; }
-  details div { padding: 0 0 18px; color: var(--muted); font-size: 15.5px; }
+  details div { padding: 0 0 16px; color: var(--muted); font-size: 15px; }
 
-  .ask { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 34px; margin-top: 48px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
-  @media (max-width: 700px) { .ask { grid-template-columns: 1fr; } }
-  .ask h3 { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
-  .ask p { font-family: 'Inter', sans-serif; font-size: 14.5px; color: var(--muted); }
-  .ask p a { color: var(--ink); }
-  .ask-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-  .ask-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 14.5px; font-weight: 500; text-decoration: none; padding: 12px 20px; border-radius: 10px; border: 1px solid var(--line); color: var(--ink); background: var(--bg); transition: border-color .15s, transform .15s; }
-  .ask-btn:hover { border-color: var(--ink); transform: translateY(-1px); }
-  .ask-btn svg { width: 18px; height: 18px; }
+  .contact { font-size: 15px; color: var(--muted); }
+  .contact a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
 
-  /* Book */
-  #book { scroll-margin-top: 80px; }
-  .offer-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 36px; margin-top: 32px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; box-shadow: 0 12px 36px rgba(25,23,20,.06); }
-  @media (max-width: 640px) { .offer-card { grid-template-columns: 1fr; } }
-  .offer-card h3 { font-size: 22px; font-weight: 600; margin-bottom: 6px; }
-  .offer-card .meta { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); }
-  .offer-card .meta b { color: var(--ink); }
-  .offer-card .price { font-family: 'Inter', sans-serif; font-size: 40px; font-weight: 600; text-align: right; }
-  .offer-card .price small { display: block; font-size: 12.5px; color: var(--muted); font-weight: 400; margin-top: 2px; }
-  #cal-inline { margin-top: 28px; }
+  #book { scroll-margin-top: 40px; }
+  .book-line { font-size: 15px; color: var(--muted); }
+  .book-line b { color: var(--ink); }
+  .book-line a { color: var(--accent); }
+  #cal-inline { margin-top: 24px; }
   #cal-inline iframe { min-height: 560px; }
 
-  footer { padding: 48px 0 72px; border-top: 1px solid var(--line); font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); }
-  footer a { color: var(--ink); }
+  footer { padding: 56px 0 72px; font-size: 13.5px; color: var(--muted); }
+  footer a { color: var(--muted); }
 </style>
 </head>
 <body>
@@ -112,65 +82,44 @@
 <nav>
   <div class="nav-inner">
     <a class="brand" href="#">Dante Puglisi</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a class="nav-cta" href="#book">Book 90 minutes</a>
-    </div>
+    <a class="nav-book" href="#book">Book 90 minutes</a>
   </div>
 </nav>
 
 <div class="wrap">
 
   <header>
-    <div class="kicker">Dante Puglisi · 1:1 with early stage founders</div>
-    <h1>How do investors and C-levels see your startup when you pitch? <em>Pitch one today and find out.</em></h1>
-    <p class="lede">It's just you and me, and nothing is at stake. You pitch exactly as you would to an investor, I give you honest feedback on what's genuinely strong and what to fix first, and the rest of the time you ask me anything. Business model, product, tech, the pitch itself.</p>
+    <h1>How do investors and C-levels see your startup when you pitch? <span class="accent">Pitch one today and find out.</span></h1>
+    <p class="lede"><b>Hi, I'm Dante, nice to meet you.</b> I'm a CTO, and what I offer is simple: 90 minutes of my full attention on your startup. You pitch exactly as you would to an investor, I give you honest feedback on what's genuinely strong and what to fix first, and the rest of the time you ask me anything. Business model, product, tech, the pitch itself.</p>
     <a class="cta" href="#book">Book 90 minutes</a>
-    <div class="cta-note"><b>I keep founder slots open in my week.</b> Pick one and it's confirmed on the spot. 90 minutes, $299.</div>
+    <div class="cta-note">$299, confirmed on the spot. I keep founder slots open in my week.</div>
   </header>
 
-  <section class="big">
-    <div class="section-kicker">Why I do this</div>
-    <h2>It started with a favor.</h2>
-    <p>A friend asked me to look at his friend's pitch, and 90 minutes of honest back and forth changed how that founder saw his own company.</p>
+  <section>
+    <div class="label">Why I do this</div>
+    <p>It started with a favor. A friend asked me to look at his friend's pitch, and 90 minutes of honest back and forth changed how that founder saw his own company.</p>
     <p>Not because I'm smarter than him. My day job at YRW Tech is buying forgotten apps, growing them, and selling them, so <span class="hl">I judge ideas, products, and execution for a living.</span> And I had no reason to tell him anything except what I actually saw.</p>
     <p>That's what you're booking. All of that experience, on your side of the table, looking at exactly one thing: your startup. Best before you've launched anywhere, before any investor has seen your name, or days before the meeting that matters.</p>
   </section>
 
   <section class="statement">
-    <div class="wrap">
-      <p>To be clear, AI might be the best thing that ever happened to founders. Products that took a year now ship in weeks, and AI even helped me write this page, it lets me say things better than I would alone. But it has one limitation built in: it's on your side. It will polish whatever you bring it, and <span class="hl">a pitch that has only ever been polished has never been tested.</span></p>
-      <a class="cta" href="#book">Test yours</a>
-    </div>
+    <p>To be clear, AI might be the best thing that ever happened to founders. Products that took a year now ship in weeks, and AI even helped me write this page. But it has one limitation built in: it's on your side. It will polish whatever you bring it, and <span class="hl">a pitch that has only ever been polished has never been tested.</span></p>
+    <a class="cta" href="#book">Test yours</a>
   </section>
 
-  <section class="alt" id="about">
-    <div class="wrap">
-      <div class="section-kicker">Who you're pitching</div>
-      <h2>A working CTO, not a career coach.</h2>
-      <div class="about">
-        <img src="photo.jpg" alt="Dante Puglisi" onerror="this.outerHTML='<div class=fallback>DP</div>'">
-        <div>
-          <p>I'm Dante Puglisi, CTO at YRW Tech, with 1 exit behind me. I've shipped more than 10 products of my own and helped teams ship over 100, for companies like Ledger, inCitu, and Sherpany. Deciding what makes a product worth betting on is my daily work.</p>
-          <p>When you book, you get me, not an analyst or a framework. I build AI myself, so expect at least one "you could use XYZ for that" you haven't heard before. And expect opinions on your design and UX. I care about those more than most CTOs, possibly too much.</p>
-          <p>Everything is public and verifiable on <a href="https://www.linkedin.com/in/dantepuglisi" target="_blank" rel="noopener">my LinkedIn</a>. If we talk, you'll know exactly who's on the other side of the table.</p>
-          <div class="cred">
-            <span>CTO · YRW Tech</span>
-            <span>1 exit</span>
-            <span>10+ products shipped</span>
-            <span>Ledger</span>
-            <span>inCitu</span>
-            <span>Sherpany</span>
-          </div>
-        </div>
+  <section id="about">
+    <div class="label">Who you're pitching</div>
+    <div class="about">
+      <img src="photo.jpg" alt="Dante Puglisi" onerror="this.outerHTML='<div class=fallback>DP</div>'">
+      <div>
+        <p class="muted">I'm a CTO at YRW Tech with 1 exit behind me. I've shipped more than 10 products of my own and helped teams ship over 100, for companies like Ledger, inCitu, and Sherpany. I build AI myself, so expect at least one "you could use XYZ for that" you haven't heard before. And expect opinions on your design and UX, I care about those more than most CTOs, possibly too much.</p>
+        <p class="facts">Everything is public and verifiable on <a href="https://www.linkedin.com/in/dantepuglisi" target="_blank" rel="noopener">LinkedIn</a>. If we talk, you'll know exactly who's on the other side of the table.</p>
       </div>
     </div>
   </section>
 
-  <section class="faq" id="faq">
-    <div class="section-kicker">Questions founders ask</div>
-    <h2>The honest FAQ.</h2>
+  <section id="faq">
+    <div class="label">Questions founders ask</div>
     <details>
       <summary>Why is payment up front?</summary>
       <div>Two reasons. Slots are scarce because I'm a full time CTO, and prepayment is what keeps the calendar real. And the 90 minutes only work if you've decided to hear everything, the good and the bad. Paying is that decision.</div>
@@ -199,39 +148,18 @@
       <summary>Who is this not for?</summary>
       <div>Founders looking for validation rather than honest feedback, agencies pitching client work, and anyone post Series A with a full advisory bench already.</div>
     </details>
-
-    <div class="ask">
-      <div>
-        <h3>Still have a question? Ask me directly.</h3>
-        <p>Send me a voice note, or text if you prefer. It reaches my phone, not an inbox tool, and I answer every one personally, usually the same day. Prefer writing? <a href="mailto:me@dantepuglisi.com">me@dantepuglisi.com</a></p>
-      </div>
-      <div class="ask-buttons">
-        <a class="ask-btn" href="https://wa.me/5491136472206?text=Hi%20Dante%2C%20quick%20question%3A" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.8 1.3-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4-4.9-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1 0 .1.4-.1 1z"/></svg>
-          WhatsApp
-        </a>
-        <a class="ask-btn" href="sms:+5491136472206">
-          <svg viewBox="0 0 24 24" fill="#0a84ff"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.2 1.1 4.2 2.9 5.6-.1.9-.5 2.3-1.6 3.4 0 0 2.4-.2 4.3-1.6.8.2 1.6.3 2.4.3 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
-          iMessage
-        </a>
-      </div>
-    </div>
   </section>
 
-  <section class="alt" id="book">
-    <div class="wrap">
-      <div class="section-kicker">Book</div>
-      <h2>Pick a slot. It's yours.</h2>
-      <p class="muted">The calendar shows exactly what's open. Deadline tighter than that? <a href="https://wa.me/5491136472206?text=Hi%20Dante%2C%20I%20have%20a%20tight%20deadline%3A" style="color: var(--accent);">Message me</a> and I'll try to make same day work.</p>
-      <div class="offer-card">
-        <div>
-          <h3>90 minutes, 1:1</h3>
-          <div class="meta"><b>On Google Meet.</b> You pitch, I tell you exactly where you stand, and you leave knowing what to do next. Payment confirms your slot.</div>
-        </div>
-        <div class="price">$299<small>everything included</small></div>
-      </div>
-      <div id="cal-inline"></div>
-    </div>
+  <section>
+    <div class="label">Still have a question?</div>
+    <p class="contact">Ask me directly. Send a voice note or a text on <a href="https://wa.me/5491136472206?text=Hi%20Dante%2C%20quick%20question%3A" target="_blank" rel="noopener">WhatsApp</a> or <a href="sms:+5491136472206">iMessage</a>. It reaches my phone, not an inbox tool, and I answer every one personally, usually the same day. Prefer writing? <a href="mailto:me@dantepuglisi.com">me@dantepuglisi.com</a></p>
+  </section>
+
+  <section id="book">
+    <div class="label">Book</div>
+    <h2>Pick a slot. It's yours.</h2>
+    <p class="book-line"><b>90 minutes, 1:1, $299, on Google Meet.</b> Payment confirms your slot. Deadline tighter than the calendar? <a href="https://wa.me/5491136472206?text=Hi%20Dante%2C%20I%20have%20a%20tight%20deadline%3A">Message me</a> and I'll try to make same day work.</p>
+    <div id="cal-inline"></div>
   </section>
 
   <footer>
